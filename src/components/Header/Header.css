@@ -1,0 +1,141 @@
+/* ---- Header Styles ---- */
+
+.header {
+  position: fixed;
+  top: 0;
+  left: var(--sidebar-width);
+  right: 0;
+  height: var(--header-height);
+  background: var(--color-white);
+  box-shadow: var(--shadow-header);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 48px;
+  z-index: 50;
+}
+
+.header-title {
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--color-text-primary);
+  letter-spacing: 0.3px;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  position: relative;
+}
+
+/* Tutorial Button */
+.header-tutorial-btn {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 6px 12px;
+  border: 1px solid var(--color-text-primary);
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--color-text-primary);
+  background: var(--color-white);
+  transition: background-color 0.2s ease;
+}
+
+.header-tutorial-btn:hover {
+  background-color: var(--color-border-light);
+}
+
+/* User Avatar */
+.header-user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.header-avatar {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: var(--color-avatar-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-text-primary);
+}
+
+.header-arrow {
+  transition: transform 0.2s ease;
+  color: var(--color-text-muted);
+}
+
+.header-arrow--open {
+  transform: rotate(180deg);
+}
+
+/* Dropdown */
+.header-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 8px;
+  background: var(--color-white);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-header);
+  min-width: 140px;
+  padding: 4px;
+  z-index: 60;
+  animation: dropdownFade 0.15s ease;
+}
+
+@keyframes dropdownFade {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.header-dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--color-text-primary);
+  border-radius: var(--radius-sm);
+  transition: background-color 0.15s ease;
+}
+
+.header-dropdown-item:hover {
+  background-color: var(--color-border-light);
+}
+
+/* ---- Mobile ---- */
+@media (max-width: 768px) {
+  .header {
+    left: 0;
+    padding: 0 16px 0 56px;
+  }
+
+  .header-title {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 16px;
+  }
+
+  .header-tutorial-btn {
+    display: none;
+  }
+}
