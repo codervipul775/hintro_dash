@@ -1,0 +1,62 @@
+/* ---- User Switcher Styles ---- */
+
+.user-switcher {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 16px;
+  background-color: var(--color-usage-bg);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border-light);
+}
+
+.user-switcher-label {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--color-text-dim);
+  white-space: nowrap;
+}
+
+.user-switcher-buttons {
+  display: flex;
+  gap: 6px;
+}
+
+.user-switcher-btn {
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--color-text-dim);
+  border: 1px solid var(--color-border-card);
+  border-radius: var(--radius-sm);
+  background: var(--color-white);
+  transition: all 0.2s ease;
+}
+
+.user-switcher-btn:hover {
+  border-color: var(--color-text-primary);
+}
+
+.user-switcher-btn--active {
+  background-color: var(--color-text-primary);
+  color: var(--color-white);
+  border-color: var(--color-text-primary);
+}
+
+/* ---- Mobile ---- */
+@media (max-width: 768px) {
+  .user-switcher {
+    flex-direction: column;
+    gap: 8px;
+    align-items: stretch;
+  }
+
+  .user-switcher-buttons {
+    width: 100%;
+  }
+
+  .user-switcher-btn {
+    flex: 1;
+    text-align: center;
+  }
+}
