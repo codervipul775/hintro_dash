@@ -1,0 +1,108 @@
+/* ---- Logout Modal Styles ---- */
+
+.logout-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-overlay);
+  z-index: 300;
+  animation: fadeIn 0.2s ease;
+}
+
+.logout-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  z-index: 301;
+  width: 420px;
+  max-width: 90vw;
+  animation: scaleIn 0.2s ease;
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.logout-content {
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* Header */
+.logout-header {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.logout-title {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--color-text-primary);
+  letter-spacing: 0.3px;
+}
+
+.logout-divider {
+  height: 1px;
+  background-color: var(--color-border-light);
+}
+
+/* Message */
+.logout-message {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--color-text-primary);
+  line-height: 1.5;
+}
+
+/* Actions */
+.logout-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.logout-cancel {
+  flex: 1;
+  padding: 8px 14px;
+  border: 1px solid var(--color-text-dim);
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--color-text-primary);
+  background: var(--color-white);
+  transition: background-color 0.2s ease;
+}
+
+.logout-cancel:hover {
+  background-color: var(--color-border-light);
+}
+
+.logout-confirm {
+  flex: 1;
+  padding: 8px 14px;
+  background-color: var(--color-text-primary);
+  color: var(--color-white);
+  border: 0.5px solid var(--color-text-primary);
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+  font-weight: 500;
+  transition: opacity 0.2s ease;
+}
+
+.logout-confirm:hover {
+  opacity: 0.85;
+}

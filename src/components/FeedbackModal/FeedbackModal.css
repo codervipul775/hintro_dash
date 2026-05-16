@@ -1,0 +1,246 @@
+/* ---- Feedback Modal Styles ---- */
+
+.feedback-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-overlay);
+  z-index: 200;
+  animation: fadeIn 0.2s ease;
+}
+
+.feedback-modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 400px;
+  height: 100vh;
+  background: var(--color-white);
+  box-shadow: -4px 0 20px rgba(0, 0, 0, 0.15);
+  z-index: 201;
+  display: flex;
+  flex-direction: column;
+  animation: slideInRight 0.3s ease;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Header */
+.feedback-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.feedback-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.feedback-close {
+  padding: 4px;
+  color: var(--color-text-muted);
+  transition: color 0.15s ease;
+}
+
+.feedback-close:hover {
+  color: var(--color-text-primary);
+}
+
+/* Tabs */
+.feedback-tabs {
+  display: flex;
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.feedback-tab {
+  flex: 1;
+  padding: 12px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.feedback-tab--active {
+  color: var(--color-primary);
+  border-bottom-color: var(--color-primary);
+}
+
+/* Body */
+.feedback-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 24px;
+}
+
+/* Form */
+.feedback-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.feedback-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.feedback-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-text-primary);
+}
+
+.feedback-stars {
+  display: flex;
+  gap: 4px;
+}
+
+.feedback-star {
+  font-size: 28px;
+  color: var(--color-border-card);
+  padding: 0;
+  transition: color 0.15s ease, transform 0.15s ease;
+}
+
+.feedback-star:hover {
+  transform: scale(1.2);
+}
+
+.feedback-star--active {
+  color: #FFB800;
+}
+
+.feedback-textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--color-border-card);
+  border-radius: var(--radius-md);
+  font-family: var(--font-primary);
+  font-size: 13px;
+  color: var(--color-text-primary);
+  resize: vertical;
+  transition: border-color 0.2s ease;
+}
+
+.feedback-textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+.feedback-textarea::placeholder {
+  color: var(--color-text-muted);
+}
+
+.feedback-submit {
+  padding: 12px 20px;
+  background-color: var(--color-text-primary);
+  color: var(--color-white);
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  font-weight: 500;
+  transition: opacity 0.2s ease;
+}
+
+.feedback-submit:hover:not(:disabled) {
+  opacity: 0.85;
+}
+
+.feedback-submit:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.feedback-success {
+  padding: 12px;
+  background-color: var(--color-stat-ai-bg);
+  border-radius: var(--radius-md);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-icon-ai);
+  text-align: center;
+}
+
+/* History */
+.feedback-history {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.feedback-empty {
+  font-size: 14px;
+  color: var(--color-text-muted);
+  text-align: center;
+  padding: 40px 0;
+}
+
+.feedback-entry {
+  padding: 14px;
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.feedback-entry-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.feedback-entry-stars {
+  font-size: 16px;
+  color: #FFB800;
+  letter-spacing: 2px;
+}
+
+.feedback-entry-delete {
+  font-size: 20px;
+  color: var(--color-text-muted);
+  padding: 0 4px;
+  transition: color 0.15s ease;
+}
+
+.feedback-entry-delete:hover {
+  color: var(--color-icon-sessions);
+}
+
+.feedback-entry-comment {
+  font-size: 13px;
+  color: var(--color-text-primary);
+  line-height: 1.5;
+}
+
+.feedback-entry-date {
+  font-size: 11px;
+  color: var(--color-text-muted);
+}
+
+/* ---- Mobile ---- */
+@media (max-width: 768px) {
+  .feedback-modal {
+    width: 100%;
+  }
+}
