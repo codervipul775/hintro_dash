@@ -16,7 +16,7 @@ export default function WelcomeSection({ firstName }) {
           Ready to make your next call smarter ?
         </p>
       </div>
-      <button className="welcome-cta">Start New Call</button>
+      <button className="welcome-cta">Start Call</button>
     </div>
   );
 }
